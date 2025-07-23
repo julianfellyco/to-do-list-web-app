@@ -49,3 +49,15 @@ addBtn.addEventListener('click', () => {
 // Load saat halaman dibuka
 window.onload = loadTasks;
 li.classList.add('bg-gray-100', 'p-2', 'rounded', 'flex', 'justify-between', 'items-center', 'shadow-sm');
+const themeToggle = document.getElementById('theme-toggle');
+const userPref = localStorage.getItem('theme');
+
+if (userPref === 'dark') document.body.classList.add('dark');
+
+themeToggle.addEventListener('click', () => {
+  document.body.classList.toggle('dark');
+  const isDark = document.body.classList.contains('dark');
+  themeToggle.textContent = isDark ? '🌞 Light Mode' : '🌙 Dark Mode';
+  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+});
+
