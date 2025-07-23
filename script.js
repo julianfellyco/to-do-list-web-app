@@ -48,3 +48,4 @@ addBtn.addEventListener('click', () => {
 
 // Load saat halaman dibuka
 window.onload = loadTasks;
+li.classList.add('bg-gray-100', 'p-2', 'rounded', 'flex', 'justify-between', 'items-center', 'shadow-sm');
