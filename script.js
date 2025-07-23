@@ -24,4 +24,26 @@ function addTask() {
   taskList.appendChild(li);
   input.value = '';
 }
+function saveTasks() {
+  const tasks = [];
+  document.querySelectorAll('#task-list li').forEach(li => {
+    tasks.push(li.firstChild.textContent); // hanya teks task
+  });
+  localStorage.setItem('tasks', JSON.stringify(tasks));
+}
 
+function loadTasks() {
+  const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+  tasks.forEach(task => {
+    input.value = task;
+    addTask();
+  });
+}
+
+addBtn.addEventListener('click', () => {
+  addTask();
+  saveTasks();
+});
+
+// Load saat halaman dibuka
+window.onload = loadTasks;
