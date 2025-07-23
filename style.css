@@ -70,3 +70,14 @@ button:hover {
 button:active {
   transform: scale(0.95);
 }
+.fade-in {
+  animation: fadeIn 0.4s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
