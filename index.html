@@ -4,10 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Julian's To-Do App</title>
+  <script>
+  tailwind.config = {
+    darkMode: 'class'
+  }
+</script>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 min-h-screen flex items-center justify-center px-4">
-
+<button id="theme-toggle" class="absolute top-4 right-4 bg-gray-200 dark:bg-gray-700 text-sm px-3 py-1 rounded">
+  🌙 Dark Mode
+</button>
+  <div class="container">
   <div class="w-full max-w-md bg-white rounded-xl shadow-md p-6">
     <h1 class="text-2xl font-bold text-center mb-4 text-blue-600">📝 Julian's To-Do List</h1>
 
@@ -19,7 +27,8 @@
     <ul id="task-list" class="space-y-2">
       <!-- tasks will be inserted here -->
     </ul>
-  </div>
+  </div> 
+</div>
 
   <script src="script.js"></script>
 </body>
