@@ -10,8 +10,8 @@ function addTask() {
 
   const li = document.createElement('li');
   li.textContent = taskText;
+  li.classList.add('fade-in');
 
-  // Tombol hapus
   const delBtn = document.createElement('button');
   delBtn.textContent = '❌';
   delBtn.style.marginLeft = '10px';
@@ -24,6 +24,7 @@ function addTask() {
   taskList.appendChild(li);
   input.value = '';
 }
+
 function saveTasks() {
   const tasks = [];
   document.querySelectorAll('#task-list li').forEach(li => {
